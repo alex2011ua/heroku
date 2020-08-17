@@ -120,5 +120,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-REDIS_URL = os.getenv("REDIS_URL", "redis://127.0.0.1:6379/2")
+REDIS_URL = os.getenv("REDIS_URL", "redis://127.0.0.1:6379")
 django_heroku.settings(locals())
