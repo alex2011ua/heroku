@@ -1,7 +1,7 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <title> {% block title %} zamena {% endblock %} </title>
@@ -12,22 +12,31 @@
 </head>
 <body>
 {% block nav %}
-
-
- {% endblock %}
+{% endblock %}
 
 {% block content %}
-
- {% endblock %}
+{% endblock %}
 
 {% block avto %}
-
- {% endblock %}
+{% endblock %}
 
 
 <script type="text/javascript" src="{% static "jquery/jquary-3.5.1.min.js"%}"></script>
 <script type="text/javascript" src="{% static "bootstrap/js/bootstrap.min.js" %}"></script>
 {%block scripts %} {% endblock%}
+
+{% block user %}
+  <p> GПользователь зарегистрирован под ником: {{ user }}</p>
+{% endblock %}
+<div  class="container">
+    <div  class="row justify-content-center">
+      <div  class="col-4">
+
+      {% block main %}
+      {% endblock %}
+      </div>
+    </div>
+  </div>
 
 </body>
 </html>

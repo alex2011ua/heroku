@@ -37,8 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'avto.apps.AvtoConfig'
+    'crispy_forms',
+    'avto.apps.AvtoConfig',
+    'accounts.apps.AccountsConfig',
+
 ]
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -77,8 +81,12 @@ WSGI_APPLICATION = 'heroku.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'mySQL_db',
+        'USER': 'dj',
+        'PASSWORD': 'IIDS520a',
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
     }
 }
 
@@ -119,6 +127,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
+LOGIN_REDIRECT_URL = '/'
+
 STATIC_URL = '/static/'
-REDIS_URL = os.getenv("REDIS_URL", "redis://127.0.0.1:6379")
+LOGIN_URL = '/login/'
 django_heroku.settings(locals())

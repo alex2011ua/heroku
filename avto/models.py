@@ -8,3 +8,8 @@ class Avto(models.Model):
 class User(models.Model):
     login = models.CharField(max_length = 20)
     passw = models.CharField(max_length = 20)
+
+
+class Test(models.Model):
+    test1 = models.CharField(max_length = 20)
+    test2 = models.CharField(max_length = 20)

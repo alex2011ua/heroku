@@ -1,0 +1,20 @@
+{% extends  'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block main %}
+    <h1  class="text-center">Django Authentication Example1</h1>
+<div class="card">
+<div class="card-body">
+<h4 class="card-title">Log in to your account1</h4>
+
+<form method="post">
+{% csrf_token %}
+<input type="hidden" name="next" value="{{ next }}">
+
+{{ form|crispy }}
+
+<button type="submit" class="btn btn-primary btn-block">Log in1</button>
+</form>
+</div>
+</div>
+{% endblock %}
