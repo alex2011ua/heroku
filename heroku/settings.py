@@ -14,7 +14,7 @@ import os
 import django_heroku
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+print(os.path.join(BASE_DIR, 'templates'))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
@@ -56,10 +56,12 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'heroku.urls'
 
+accou = os.path.join(BASE_DIR, 'accounts/templates')
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')]
+        'DIRS': [os.path.join(BASE_DIR, 'templates'), accou, ]
         ,
         'APP_DIRS': True,
         'OPTIONS': {
