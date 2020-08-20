@@ -1,4 +1,4 @@
-from avto.models import MyCount
+#from avto.models import MyCount
 
 
 class Counter:
