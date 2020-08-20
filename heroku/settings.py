@@ -108,6 +108,7 @@ if CLEARDB_DATABASE_URL:
         'HOST': host,
         'PORT': '3306',
     }
+    print(DATABASES_heroku)
     DATABASES['default'] = DATABASES_heroku
 
 
