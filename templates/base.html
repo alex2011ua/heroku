@@ -1,3 +1,4 @@
+{% load static %}
 
 <!DOCTYPE html>
 <html lang="ru">
@@ -5,6 +6,7 @@
     <meta charset="UTF-8">
     <title> {% block title %} zamena {% endblock %} </title>
 
+    <link rel="stylesheet" type="text/css" href="{% static "avto/css/index.css" %} ">
     {% block styles%} {% endblock%}
 
 </head>
@@ -18,15 +20,6 @@
 {% block avto %}
 {% endblock %}
 
-{% block my_counter %}
-{% endblock %}
-
-
-{%block scripts %} {% endblock%}
-
-{% block user %}
-  <p> GПользователь зарегистрирован под ником: {{ user }}</p>
-{% endblock %}
 <div  class="container">
     <div  class="row justify-content-center">
       <div  class="col-4">
@@ -37,6 +30,17 @@
     </div>
   </div>
 
+{% block my_counter %}
+{% endblock %}
+
+{% block user %}
+  <p class="myc-1"> GПользователь зарегистрирован под ником: {{ user }}</p>
+{% endblock %}
+
+
+
+
+{%block scripts %} {% endblock%}
 </body>
 </html>
 
