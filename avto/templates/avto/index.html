@@ -1,14 +1,10 @@
-{% extends "base.html" %}
-{% block title %} Hello! {% endblock %}
-{% block content %}
-<h1>Приветствие!</h1>
-    <a class="btn btn-primary" href="add" role="button">Add</a>
-    <a class="btn btn-primary" href="view" role="button">View</a>
-    <a class="btn btn-primary" href="/accounts/logout/" role="button">Сменить пользователя</a>
-    <a class="btn btn-primary" href="/accounts/password-change/" role="button">Сменить пароль</a>
-
-{% endblock %}
-
-{% block my_counter %}
-    <p>Счетчик показа страницы: {{ counter }}</p>
-{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello! Index</title>
+</head>
+<body>
+<p>Счетчик показа страницы: {{ counter }}</p>
+</body>
+</html>
