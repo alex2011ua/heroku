@@ -148,4 +148,5 @@ LOGIN_REDIRECT_URL = '/avto/view'
 
 STATIC_URL = '/static/'
 LOGIN_URL = '/accounts/login/'
+LOGOUT_REDIRECT_URL = '/accounts/login/'
 django_heroku.settings(locals())

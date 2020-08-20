@@ -2,10 +2,12 @@
 {% load crispy_forms_tags %}
 
 {% block main %}
-    <h1  class="text-center">Django Authentication Example1</h1>
+    <h2 class="card-title">Вход в аккаунт.</h2>
 <div class="card">
 <div class="card-body">
-<h4 class="card-title">Log in to your account1</h4>
+
+    <h4  class="text-center">Тестовый пользователь: user</h4>
+    <h4  class="text-center">пароль : 12345</h4>
 
 <form method="post">
 {% csrf_token %}
