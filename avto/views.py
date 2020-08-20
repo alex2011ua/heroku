@@ -6,14 +6,15 @@ from django.views.generic import TemplateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 from django.views import View
-
+from .storage import counter
 
 class Start(TemplateView):
     template_name = 'avto/index.html'
 
     def get_context_data(self, **kwargs):
         data = super().get_context_data(**kwargs)
-        data['counter'] = '1'
+
+        data['counter'] = counter.inc()
         return data
 
 

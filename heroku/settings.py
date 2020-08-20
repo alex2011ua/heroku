@@ -14,7 +14,7 @@ import os
 import django_heroku
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-print(os.path.join(BASE_DIR, 'templates'))
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
@@ -56,12 +56,12 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'heroku.urls'
 
-accou = os.path.join(BASE_DIR, 'accounts/templates')
+# accou = os.path.join(os.path.join(BASE_DIR, 'accounts'),'templates')
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates'), accou, ]
+        'DIRS': [os.path.join(BASE_DIR, 'templates'), ]
         ,
         'APP_DIRS': True,
         'OPTIONS': {
@@ -129,8 +129,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/avto/view'
 
 STATIC_URL = '/static/'
-LOGIN_URL = '/login/'
+LOGIN_URL = '/accounts/login/'
 django_heroku.settings(locals())
