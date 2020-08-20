@@ -22,6 +22,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.getenv('SECRET_KEY', 'n8ga2_ghg!d9wpil^&tl69vo6t%6_ufst0lg-8#fx%xa*s*sxp')
 
+
+CLEARDB_DATABASE_URL = os.getenv("CLEARDB_DATABASE_URL", False)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = bool(os.getenv("DEBUG", True))
 
@@ -91,6 +93,22 @@ DATABASES = {
         'PORT': '3306',
     }
 }
+
+# mysql://be630cb1cdd89b:e4c654ce@eu-cdbr-west-03.cleardb.net/heroku_63176905f1157f6
+if CLEARDB_DATABASE_URL:
+    z = CLEARDB_DATABASE_URL.split('/')
+    name = z[3]
+    autification, host = z[2].split('@')
+    user, password = autification.split(':')
+    DATABASES_heroku = {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': name,
+        'USER': user,
+        'PASSWORD': password,
+        'HOST': host,
+        'PORT': '3306',
+    }
+    DATABASES['default'] = DATABASES_heroku
 
 
 # Password validation
