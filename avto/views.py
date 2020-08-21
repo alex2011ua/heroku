@@ -56,11 +56,12 @@ class AvtoView(LoginRequiredMixin, View):
     def post(self, request):
         nomer_avto = request.POST.get("search")
 
-        avtos = Avto.objects.filter(nomer_avto = nomer_avto)
+        avtos = Avto.objects.filter(nomer_avto__icontains = nomer_avto)
         all_avto = Avto.objects.all().aggregate(count = Count('nomer_avto'))
         print(len(avtos))
 
         context = {
+            'zapros': nomer_avto,
             'avtos': avtos,
             "count": all_avto['count'],
             "count_search": len(avtos),
