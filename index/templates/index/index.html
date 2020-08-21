@@ -10,8 +10,8 @@
               {% else %} Для работы необходимо зарегистрироваться!{% endif %}
               </h4>
     {% if user.is_authenticated %}
-    <a class="btn btn-primary" href="add/" role="button">Добавить машину</a>
-    <a class="btn btn-primary" href="view/" role="button">Поиск автомобиля</a>
+    <a class="btn btn-primary" href="/avto/add/" role="button">Добавить машину</a>
+    <a class="btn btn-primary" href="/avto/view/" role="button">Поиск автомобиля</a>
 
         {% else %}
         <a class="btn btn-info" href="/accounts/login/" role="button">Вход!</a>

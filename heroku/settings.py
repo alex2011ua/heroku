@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'avto.apps.AvtoConfig',
     'accounts.apps.AccountsConfig',
+    'index.apps.IndexConfig'
 
 ]
 CRISPY_TEMPLATE_PACK = 'bootstrap4'

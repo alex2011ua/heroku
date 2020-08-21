@@ -4,6 +4,7 @@ from django.db import models
 class Avto(models.Model):
     nomer_avto = models.CharField(max_length = 10)
     discript_avto = models.CharField(max_length = 1000)
+    author = models.ForeignKey(settings.)
 
 
 class User(models.Model):
