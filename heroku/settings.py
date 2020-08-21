@@ -94,7 +94,7 @@ DATABASES = {
     }
 }
 
-# mysql://be630cb1cdd89b:e4c654ce@eu-cdbr-west-03.cleardb.net/heroku_63176905f1157f6
+
 if CLEARDB_DATABASE_URL:
     z = CLEARDB_DATABASE_URL.split('/')
     name = z[3]
@@ -148,5 +148,5 @@ LOGIN_REDIRECT_URL = '/avto/view'
 
 STATIC_URL = '/static/'
 LOGIN_URL = '/accounts/login/'
-LOGOUT_REDIRECT_URL = '/accounts/login/'
+LOGOUT_REDIRECT_URL = '/'
 django_heroku.settings(locals())

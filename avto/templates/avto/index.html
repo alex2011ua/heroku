@@ -1,14 +1,34 @@
 {% extends "base.html" %}
+{% load static %}
 {% block title %} Hello! {% endblock %}
 {% block content %}
-<h1>Приветствие!</h1>
+    <section class="services-section" id="section-1">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-services">
+              <h4>{% if user.is_authenticated %}Приветствую {{ user.username }}.
+              {% else %} Для работы необходимо зарегистрироваться!{% endif %}
+              </h4>
+    {% if user.is_authenticated %}
     <a class="btn btn-primary" href="add/" role="button">Добавить машину</a>
     <a class="btn btn-primary" href="view/" role="button">Поиск автомобиля</a>
-    <a class="btn btn-primary" href="/accounts/logout/" role="button">Сменить пользователя</a>
-    <a class="btn btn-primary" href="/accounts/password-change/" role="button">Сменить пароль</a>
 
+        {% else %}
+        <a class="btn btn-info" href="/accounts/login/" role="button">Вход!</a>
+            {% endif %}
+          </div> <!-- /.col-md-12 -->
+        </div> <!-- /.row -->
+        <p> </p>
+        <div class="row">
+          <div class="col-md-12 col-services">
+              {% if user.is_authenticated %}
+              <a class="btn btn-info" href="/accounts/logout/" role="button">Сменить пользователя</a>
+              <a class="btn btn-info" href="/accounts/password-change/" role="button">Сменить пароль</a>
+              {% endif %}
+          </div> <!-- /.col-md-12 -->
+        </div> <!-- /.row -->
+      </div> <!-- /.container -->
+    </section> <!-- /.services-section -->
 {% endblock %}
 
-{% block my_counter %}
-    <p class="asda">Счетчик показа страницы: {{ counter }}</p>
-{% endblock %}
+

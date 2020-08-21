@@ -16,18 +16,33 @@ class Start(TemplateView):
         data = super().get_context_data(**kwargs)
 
         data['counter'] = counter.inc()
-        print(data)
+        print(self.request.user)
         return data
 
 
 class Add_avto(LoginRequiredMixin, View):
     def get(self, request):
+        all_avto = Avto.objects.all().aggregate(count = Count('nomer_avto'))
+        context = {
+            "count": all_avto['count'],
+
+        }
+        return render(request, "avto/form_add.html", context)
 
 
-        context = {}
+    def post(self, request):
+        nomer_avto = request.POST.get("nomer_avto")
+        discript_avto = request.POST.get("discript_avto")
+        avtos = Avto.objects.filter(nomer_avto = nomer_avto)
+        all_avto = Avto.objects.all().aggregate(count = Count('nomer_avto'))
+        print(len(avtos))
+        if len(avtos) == 0:
+            Avto.objects.create(nomer_avto=nomer_avto, discript_avto=discript_avto)
+        context = {
 
-        return render(request, "avto/form.html", context)
-
+            "count": all_avto['count'],
+        }
+        return render(request, "avto/form_add.html", context)
 
 class AvtoView(LoginRequiredMixin, View):
     def get(self, request):
@@ -36,19 +51,20 @@ class AvtoView(LoginRequiredMixin, View):
             "count": all_avto['count'],
 
         }
-        return render(request, "avto/form.html", context)
+        return render(request, "avto/form_search.html", context)
 
     def post(self, request):
-        nomer_avto = request.POST.get("nomer_avto")
-        discript_avto = request.POST.get("discript_avto")
+        nomer_avto = request.POST.get("search")
+
         avtos = Avto.objects.filter(nomer_avto = nomer_avto)
         all_avto = Avto.objects.all().aggregate(count = Count('nomer_avto'))
         print(len(avtos))
-        Avto.objects.create(nomer_avto=nomer_avto, discript_avto=discript_avto)
+
         context = {
             'avtos': avtos,
             "count": all_avto['count'],
+            "count_search": len(avtos),
         }
-        return render(request, "avto/form.html", context)
+        return render(request, "avto/form_search.html", context)
 
 

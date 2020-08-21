@@ -7,11 +7,33 @@
     <title> {% block title %} zamena {% endblock %} </title>
     <link rel="stylesheet" type="text/css" href="{% static "bootstrap/css/bootstrap.min.css" %} ">
     <link rel="stylesheet" type="text/css" href="{% static "avto/css/index.css" %} ">
+    <link href="{% static "application.css" %}" rel="stylesheet">
     {% block styles%} {% endblock%}
 
 </head>
-<body>
-{% block nav %}
+<body class="index" id="to-top">
+{% block user %}
+<div class="alert alert-dark" role="alert">
+  Пользователь зарегистрирован под ником: {{ user }}
+<a href="/accounts/logout" class="badge badge-primary">Сменить</a>
+</div>
+{% endblock %}
+{% block logo %}
+
+    <section class="services-section" id="section-1">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-services">
+            <!-- Logo -->
+            <figure class="text-center">
+              <a href="/">
+                <img class="img-responsive" src="{% static "ba_logo.png" %} " alt="Logo">
+              </a>
+            </figure>
+          </div> <!-- /.col-md-12 -->
+        </div> <!-- /.row -->
+      </div> <!-- /.container -->
+    </section> <!-- /.services-section -->
 {% endblock %}
 
 {% block content %}
@@ -26,16 +48,18 @@
 
       {% block main %}
       {% endblock %}
+
       </div>
     </div>
-  </div>
+</div>
+{% block list_avto %}
 
+{% endblock %}
 {% block my_counter %}
+    <h6>Счетчик показа страницы:  <span class="badge badge-secondary">{{ counter }}</span></h6>
 {% endblock %}
 
-{% block user %}
-  <p class="myc-1"> Пользователь зарегистрирован под ником: {{ user }}</p>
-{% endblock %}
+
 
 
 

@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %} Avto {% endblock %}
+{% block content %}
+<nav class="navbar navbar-dark bg-dark">
+      <form class="form-inline my-2 my-lg-0" method="post" action="">
+          {% csrf_token %}
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search">
+        <button class="btn btn-outline-success" type="submit">Поиск автомобиля</button>
+          <a class="btn btn-primary" href="/add/" role="button">Добавить машину</a>
+
+
+    </form>
+</nav>
+{% endblock %}
+
+{% block avto %}
+ Общее количество добавленых автомобилей - {{ count }}. <p>
+    Найдено поиском - {{ count_search }} записей!
+{% endblock %}
+{% block list_avto %}
+    {% for avto in avtos %}
+    {{ avto.nomer_avto }}, {{ avto.discript_avto }}
+    {% endfor %}
+{% endblock %}
+
+
+{% block my_counter %}
+
+{% endblock %}

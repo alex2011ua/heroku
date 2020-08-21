@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %} Avto {% endblock %}
+
+
+{% block main %}
+<form class="form-inline my-2 my-lg-0" method="post" action="">
+{% csrf_token %}
+      <input class="form-control mr-sm-2" type="text" placeholder="Номер" aria-label="Search" name="nomer_avto">
+      <input class="form-control mr-sm-2" type="text" placeholder="Описание" aria-label="Search" name="discript_avto">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Добавить авто</button>
+</form>
+
+ {% endblock %}
+
+{% block avto %}
+    <h6>Количество добавленных автомобилей -  <span class="badge badge-secondary">{{ count }}</span></h6>
+{% endblock %}
+
+{% block my_counter %}
+
+{% endblock %}
