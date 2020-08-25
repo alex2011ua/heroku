@@ -3,16 +3,16 @@ from django.conf import settings
 
 
 class Avto(models.Model):
-    nomer_avto = models.CharField(max_length = 10)
+    ''' таблица автомобилей с описанием '''
+    nomer_avto = models.CharField(max_length = 10, unique = True)
     discript_avto = models.CharField(max_length = 1000)
-    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete = None)
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, models.SET_NULL,
+                               blank=True, null=True,)
 
 
-class User(models.Model):
-    login = models.CharField(max_length = 20)
-    passw = models.CharField(max_length = 20)
-
-
-class MyCount(models.Model):
-    stolb = models.CharField(max_length = 20, unique = True)
-    m_coun = models.IntegerField()
+class Topic(models.Model):
+    '''Объявления'''
+    title = models.CharField(max_length = 50)
+    body = models.CharField(max_length = 1000)
+    author_topic = models.ForeignKey(settings.AUTH_USER_MODEL, models.SET_NULL,
+                               blank=True, null=True,)

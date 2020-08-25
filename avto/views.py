@@ -28,7 +28,7 @@ class Add_avto(LoginRequiredMixin, View):
         all_avto = Avto.objects.all().aggregate(count = Count('nomer_avto'))
         print(len(avtos))
         if len(avtos) == 0:
-            Avto.objects.create(nomer_avto=nomer_avto, discript_avto=discript_avto)
+            Avto.objects.create(nomer_avto=nomer_avto, discript_avto=discript_avto, author = self.request.user)
         context = {
 
             "count": all_avto['count'],

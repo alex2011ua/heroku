@@ -1,4 +1,4 @@
-from avto.models import MyCount
+from index.models import MyCount
 
 
 class Counter:
@@ -9,6 +9,7 @@ class Counter:
         try:
             print('try get count')
             self.key = MyCount.objects.get(stolb='count')
+
         except:
             print('exept, create count')
             self.key = MyCount.objects.create(stolb = 'count', m_coun = 0)
