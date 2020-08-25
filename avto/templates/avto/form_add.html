@@ -5,11 +5,12 @@
 {% block main %}
 <form class="form-inline my-2 my-lg-0" method="post" action="">
 {% csrf_token %}
-      <input class="form-control mr-sm-2" type="text" placeholder="Номер" aria-label="Search" name="nomer_avto">
+      <input class="form-control mr-sm-2" type="text" placeholder="Номер" aria-label="Search" name="nomer_avto" autofocus>
       <input class="form-control mr-sm-2" type="text" placeholder="Описание" aria-label="Search" name="discript_avto">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Добавить авто</button>
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" >Добавить авто</button>
 </form>
-
+<a class="btn btn-primary" href="/avto/view/" role="button">Поиск по номеру</a>
+    <a class="btn btn-primary" href="/avto/dell/" role="button" >Удалить из базы!</a>
  {% endblock %}
 
 {% block avto %}

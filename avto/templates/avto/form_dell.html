@@ -1,13 +1,12 @@
 {% extends "base.html" %}
 {% block title %} Avto {% endblock %}
 {% block content %}
+    Для удаление автомобиля введите номер авто:
 <nav class="navbar navbar-dark bg-dark">
       <form class="form-inline my-2 my-lg-0" method="post" action="">
           {% csrf_token %}
         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search">
         <button class="btn btn-outline-success" type="submit">Поиск автомобиля</button>
-
-
 
     </form>
 <a class="btn btn-primary" href="/avto/add/" role="button">Добавить машину</a>
@@ -23,7 +22,7 @@
 {% block list_avto %}
     <ul class=" list-group asda">
     {% for avto in avtos %}
-<li class="list-group-item">{{ avto.nomer_avto }} -  {{ avto.discript_avto }} <a href="dell/{{ avto.nomer_avto }}/">удалить</a> </li>
+<li class="list-group-item">{{ avto.nomer_avto }} -  {{ avto.discript_avto }}</li>
 
     {% endfor %}
     </ul>
