@@ -1,10 +1,11 @@
 from django.db import models
+from django.conf import settings
 
 
 class Avto(models.Model):
     nomer_avto = models.CharField(max_length = 10)
     discript_avto = models.CharField(max_length = 1000)
-    author = models.ForeignKey(settings.)
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete = None)
 
 
 class User(models.Model):
