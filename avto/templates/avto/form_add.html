@@ -8,15 +8,13 @@
       <input class="form-control mr-sm-2" type="text" placeholder="Номер" aria-label="Search" name="nomer_avto" autofocus>
       <input class="form-control mr-sm-2" type="text" placeholder="Описание" aria-label="Search" name="discript_avto">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit" >Добавить авто</button>
-</form>
 <a class="btn btn-primary" href="/avto/view/" role="button">Поиск по номеру</a>
-    <a class="btn btn-primary" href="/avto/dell/" role="button" >Удалить из базы!</a>
+</form>
+
+
  {% endblock %}
 
 {% block avto %}
     <h6>Количество добавленных автомобилей -  <span class="badge badge-secondary">{{ count }}</span></h6>
 {% endblock %}
 
-{% block my_counter %}
-
-{% endblock %}

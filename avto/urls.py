@@ -3,11 +3,10 @@ from . import views
 urlpatterns = [
 
     path('', views.AvtoView.as_view(), name='view'),
-    path('add/', views.Add_avto.as_view(), name='add'),
+    path('add/', views.AddAvto.as_view(), name='add'),
     path('view/', views.AvtoView.as_view(), name='view'),
-    path('dell/', views.AvtoDell.as_view(), name='dell'),
-    re_path('view/dell/(?P<nomber>\w+)/$', views.AvtoDellConfirm.as_view(), name='dell'),
-
-
+    re_path(r'view/dell/(?P<nomber>\w+)/$', views.AvtoDell.as_view(), name='dell'),
+    re_path(r'view/dell/(?P<nomber>\w+)/dell$', views.AvtoDellConfirm.as_view(),
+            name='dell_confirm'),
 
 ]

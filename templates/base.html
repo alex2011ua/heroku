@@ -4,33 +4,41 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
+   <!-- <meta http-equiv="Refresh" content="5" /> -->
     <title> {% block title %} zamena {% endblock %} </title>
     <link rel="stylesheet" type="text/css" href="{% static "bootstrap/css/bootstrap.min.css" %} ">
     <link rel="stylesheet" type="text/css" href="{% static "avto/css/index.css" %} ">
-    <link href="{% static "application.css" %}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static "css/application.css" %} ">
+    <link rel="stylesheet" type="text/css" href="{% static "css/sticky-footer.css" %} ">
+
     {% block styles%} {% endblock%}
 
 </head>
-<body class="index" id="to-top">
+<body class="flex-column"  >
+
+
 {% block user %}
 <div class="alert alert-dark" role="alert">
   Пользователь зарегистрирован под ником: {{ user }}
 <a href="/accounts/logout" class="badge badge-primary">Сменить</a>
 </div>
 {% endblock %}
-{% block logo %}
 
+{% block logo %}
     <section class="services-section" id="section-1">
       <div class="container">
         <div class="row">
-          <div class="col-md-12 col-services">
+            <div class="col-md-1 col-services">
+            </div>
+          <div class="col-md-11 col-services">
+
             <!-- Logo -->
             <figure class="text-center">
               <a href="/">
-                <img class="img-responsive" src="{% static "ba_logo.png" %} " alt="Logo">
+                <img class="img-responsive" src="{% static "img/ba_logo.png" %} " alt="Logo">
               </a>
             </figure>
-          </div> <!-- /.col-md-12 -->
+          </div> <!-- /.col-md-10 -->
         </div> <!-- /.row -->
       </div> <!-- /.container -->
     </section> <!-- /.services-section -->
@@ -42,24 +50,19 @@
 {% block avto %}
 {% endblock %}
 
-<div  class="container">
-    <div  class="row justify-content-center">
-      <div  class="col-4">
 
-      {% block main %}
-      {% endblock %}
+{% block main %}
+{% endblock %}
 
-      </div>
-    </div>
-</div>
 {% block list_avto %}
-
 {% endblock %}
+
 {% block my_counter %}
-    <h6>Счетчик показа страницы:  <span class="badge badge-secondary">{{ counter }}</span></h6>
+    <footer class="footer mt-auto py-3">
+    <span class="text-muted">Счетчик показа страницы: </span>
+      <span class="badge badge-secondary">{{ counter }}</span>
+  </footer>
 {% endblock %}
-
-
 
 
 

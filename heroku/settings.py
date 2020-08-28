@@ -39,13 +39,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'crispy_forms',
+
     'avto.apps.AvtoConfig',
     'accounts.apps.AccountsConfig',
     'index.apps.IndexConfig'
 
 ]
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+STATICFILES_DIRS = (
+    "static",
+    )
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -147,7 +150,7 @@ USE_TZ = True
 
 LOGIN_REDIRECT_URL = '/avto/view'
 
-STATIC_URL = '/static/'
+STATIC_URL = '/statics/'
 LOGIN_URL = '/accounts/login/'
 LOGOUT_REDIRECT_URL = '/'
 django_heroku.settings(locals())

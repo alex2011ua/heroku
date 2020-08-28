@@ -1,23 +1,6 @@
 {% extends "base.html" %}
 {% block title %} Avto {% endblock %}
 {% block content %}
-   dell
-{% endblock %}
-{% block avto %}
-    {% if zapros %} Поиск - {{ zapros }}
-     Количество найденых записей - {{ count_search }}
-    {% endif %}
-{% endblock %}
-{% block list_avto %}
-    <ul class=" list-group asda">
-    {% for avto in avtos %}
-<li class="list-group-item">{{ avto.nomer_avto }} -  {{ avto.discript_avto }}</li>
-
-    {% endfor %}
-    </ul>
-{% endblock %}
-
-
-{% block my_counter %}
-Общее количество добавленых автомобилей - {{ count }}.
+   Автомобиль с номером {{ nomer }} c описанием - {{ discr }} удален!
+    <a class="btn btn-primary" href="/avto/view/" role="button">Поиск по номеру</a>
 {% endblock %}
