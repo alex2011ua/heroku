@@ -15,12 +15,20 @@ class Import(LoginRequiredMixin, View):
     @staticmethod
     def post(request):
         baza = request.FILES.get('image')
-        content = baza.read()
-        content = content.decode('utf-8')
+
+        for line in baza:
+            content = line.decode('utf-8')
+            try:
+                nomber, fio, model, diskr = content.split(';')
+                add_avto(request, nomber, fio+model+diskr)
+
+            except:
+                print(content)
+
 
 
         context = my_count()
-        context['content'] = avtos
+        context['content'] = []
 
         return render(request, "avto/import.html", context)
 

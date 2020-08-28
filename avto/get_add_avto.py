@@ -9,4 +9,5 @@ def add_avto(request, nomer_avto, discript_avto):
         Avto.objects.create(nomer_avto = nomer_avto,
                             discript_avto = discript_avto,
                             author = request.user)
-def get_avto()
+def get_avto(request, nomer_avto,):
+    pass
