@@ -58,13 +58,13 @@
 {% endblock %}
 
 {% block my_counter %}
-    <footer class="footer mt-auto py-3">
+
+{% endblock %}
+
+<footer class="footer mt-auto py-3">
     <span class="text-muted">Счетчик показа страницы: </span>
       <span class="badge badge-secondary">{{ counter }}</span>
   </footer>
-{% endblock %}
-
-
 
 <script type="text/javascript" src="{% static "jquery/jquery-3.5.1.min.js"%}"></script>
 <script type="text/javascript" src="{% static "bootstrap/js/bootstrap.min.js" %}"></script>

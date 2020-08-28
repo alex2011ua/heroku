@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+    <form class="form-inline my-2 my-lg-0" method="post" action="" enctype="multipart/form-data">
+          {% csrf_token %}
+        <label for="feedback-image">Загрузить файл в формате XML</label>
+        <input id="feedback-image" type="file" name="image">
+
+        <button class="btn btn-outline-success" type="submit">Загрузить базу</button>
+        {{ content }}
+
+
+    </form>
+{% endblock %}

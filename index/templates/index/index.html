@@ -10,15 +10,18 @@
               {% else %} Для работы необходимо зарегистрироваться!{% endif %}
               </h4>
     {% if user.is_authenticated %}
-    <a class="btn btn-primary" href="/avto/add/" role="button">Добавить машину</a>
+
     <a class="btn btn-primary" href="/avto/view/" role="button">Поиск автомобиля</a>
+        <a class="btn btn-primary" href="/avto/add/" role="button">Добавить машину</a>
+
 
         {% else %}
         <a class="btn btn-info" href="/accounts/login/" role="button">Вход!</a>
             {% endif %}
           </div> <!-- /.col-md-12 -->
         </div> <!-- /.row -->
-        <p> </p>
+        <p> <a class="btn btn-secondary " href="/avto/export/" role="button">'Экспорт БД'</a>
+        <a class="btn btn-secondary " href="/avto/import/" role="button">'Импорт БД'</a></p>
         <div class="row">
           <div class="col-md-12 col-services">
               {% if user.is_authenticated %}

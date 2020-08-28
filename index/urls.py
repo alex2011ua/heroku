@@ -5,4 +5,5 @@ urlpatterns = [
     path('', views.Start.as_view(), name='index'),
 
 
+
 ]
