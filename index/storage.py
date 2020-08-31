@@ -22,4 +22,4 @@ class Counter:
         return self.key.m_coun
 
 print('make counter')
-counter = Counter()
+#counter = Counter()
