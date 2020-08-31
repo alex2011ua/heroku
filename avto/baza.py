@@ -1,6 +1,6 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render
-from .counts import my_count
+#from .counts import my_count
 from django.views import View
 from avto.get_add_avto import add_avto, get_avto
 from django.http import HttpResponse
@@ -13,7 +13,7 @@ class Import(LoginRequiredMixin, View):
     @staticmethod
     def get(request):
 
-        context = my_count()
+        context = {}# my_count()
         return render(request, "avto/import.html", context)
     @staticmethod
     def post(request):
@@ -34,7 +34,7 @@ class Import(LoginRequiredMixin, View):
 
 
 
-        context = my_count()
+        context = {}# my_count()
         context['content'] = []
 
         return render(request, "avto/import.html", context)
