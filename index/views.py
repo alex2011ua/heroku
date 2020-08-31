@@ -1,4 +1,4 @@
-#from .storage import counter
+from .storage import counter
 from django.views.generic import TemplateView
 
 
