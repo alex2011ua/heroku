@@ -22,7 +22,6 @@ class AvtoDellConfirm(LoginRequiredMixin, View):
 
 class AvtoDell(LoginRequiredMixin, View):
     @staticmethod
-    @functionss
     def get(request, nomber, ):
         print(nomber)
         print(request.user.username)
@@ -36,7 +35,6 @@ class AvtoDell(LoginRequiredMixin, View):
 
 class AddAvto(LoginRequiredMixin, View):
     @staticmethod
-    @functionss
     def get(request):
         context = my_count()
         return render(request, "avto/form_add.html", context)
@@ -57,9 +55,7 @@ class AddAvto(LoginRequiredMixin, View):
 
 class AvtoView(LoginRequiredMixin, View):
 
-
     @staticmethod
-    @functionss
     def get(request):
         context = my_count()
         return render(request, "avto/form_search.html", context)

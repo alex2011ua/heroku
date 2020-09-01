@@ -6,7 +6,7 @@ from avto.get_add_avto import add_avto, get_avto
 from django.http import HttpResponse
 import os
 import mimetypes
-
+from index.logg import functionss
 
 class Import(LoginRequiredMixin, View):
 
@@ -15,7 +15,9 @@ class Import(LoginRequiredMixin, View):
 
         context = my_count()
         return render(request, "avto/import.html", context)
+
     @staticmethod
+    @functionss
     def post(request):
         baza = request.FILES.get('image')
 
@@ -41,6 +43,7 @@ class Import(LoginRequiredMixin, View):
 
 class Export(LoginRequiredMixin, View):
     @staticmethod
+    @functionss
     def get(request):
         file_name = 'temp.xml'
         with open(file_name, 'w', encoding = 'utf8') as file:
