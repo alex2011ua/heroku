@@ -4,10 +4,11 @@ from avto.get_add_avto import add_avto, get_avto
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views import View
 from .counts import my_count
-
+from .logg import functionss
 
 class AvtoDellConfirm(LoginRequiredMixin, View):
     @staticmethod
+    @functionss
     def get(request, nomber,):
         count = my_count()
         avto = Avto.objects.get(nomer_avto = nomber)
@@ -22,6 +23,7 @@ class AvtoDellConfirm(LoginRequiredMixin, View):
 
 class AvtoDell(LoginRequiredMixin, View):
     @staticmethod
+    @functionss
     def get(request, nomber, ):
         print(nomber)
         print(request.user.username)
@@ -35,11 +37,13 @@ class AvtoDell(LoginRequiredMixin, View):
 
 class AddAvto(LoginRequiredMixin, View):
     @staticmethod
+    @functionss
     def get(request):
         context = my_count()
         return render(request, "avto/form_add.html", context)
 
     @staticmethod
+    @functionss
     def post(request):
         nomer_avto = request.POST.get("nomer_avto").strip()
         discript_avto = request.POST.get("discript_avto")
@@ -53,12 +57,16 @@ class AddAvto(LoginRequiredMixin, View):
 
 
 class AvtoView(LoginRequiredMixin, View):
+
+
     @staticmethod
+    @functionss
     def get(request):
         context = my_count()
         return render(request, "avto/form_search.html", context)
 
     @staticmethod
+    @functionss
     def post(request):
         context = my_count()
         nomer_avto = request.POST.get("search").strip()
