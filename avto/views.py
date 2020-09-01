@@ -1,10 +1,9 @@
 from django.shortcuts import render
 from avto.models import Avto
-from avto.get_add_avto import add_avto, get_avto
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views import View
 from .counts import my_count
-from .logg import functionss
+from index.logg import functionss
 
 class AvtoDellConfirm(LoginRequiredMixin, View):
     @staticmethod
