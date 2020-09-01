@@ -9,6 +9,6 @@ class Start(TemplateView):
     def get_context_data(self, **kwargs):
         print('start index')
         data = super().get_context_data(**kwargs)
-        data['counter'] = counter.inc()
+        data['counter'] = counter()
         return data
 

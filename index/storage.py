@@ -1,25 +1,13 @@
 from index.models import MyCount
 
 
-class Counter:
-    key = 'Count_key'
+def counter():
+    try:
+        key = MyCount.objects.get(stolb = 'count')
+    except Exception:
+        key = MyCount.objects.create(stolb = 'count', m_coun = 0)
 
-    def __init__(self):
-        print('init counter')
-        try:
-            print('try get count')
-            self.key = MyCount.objects.get(stolb='count')
+    key.m_coun = key.m_coun + 1
+    key.save()
 
-        except:
-            print('exept, create count')
-            self.key = MyCount.objects.create(stolb = 'count', m_coun = 0)
-
-    def inc(self):
-        print('inc')
-        self.key.m_coun = self.key.m_coun + 1
-        self.key.save()
-
-        return self.key.m_coun
-
-
-counter = Counter()
+    return key.m_coun
