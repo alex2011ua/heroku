@@ -2,7 +2,7 @@ from .storage import counter
 from django.views.generic import TemplateView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpResponse
-from index.logg import functionss
+from index.logg import log_decorator
 from index.models import MyLogg
 import os
 
@@ -18,7 +18,7 @@ class Start(TemplateView):
 
 class Export(LoginRequiredMixin, TemplateView):
     @staticmethod
-    @functionss
+    @log_decorator('export')
     def get(request):
         file_name = 'temp_log.xml'
         log = MyLogg.objects.all()[0:100]
