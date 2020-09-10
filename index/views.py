@@ -21,16 +21,17 @@ class Export(LoginRequiredMixin, TemplateView):
     @log_decorator('export')
     def get(request):
         file_name = 'temp_log.xml'
-        log = MyLogg.objects.all()[0:100]
+        log = MyLogg.objects.all().order_by('date_time').reverse()[:100]
         with open(file_name, 'w', encoding = 'utf8') as file:
+            c = 0
             for logginn in log:
                 data = str(logginn.date_time)
                 text = logginn.text
                 context = logginn.context or ''
                 user = str(logginn.user) or ''
 
-                file.write(data[0:19] + ";" + text + ";" + context + ";" + user + "\n")
-
+                file.write(str(c)+ ". " + data[0:19] + ";" + text + ";" + context + ";" + user + "\n")
+                c +=1
         fp = open(file_name, "rb")
         response = HttpResponse(fp.read())
         fp.close()
