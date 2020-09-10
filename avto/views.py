@@ -5,7 +5,7 @@ from django.views import View
 from .counts import my_count
 from index.logg import log_decorator
 from django.core.exceptions import MultipleObjectsReturned, ObjectDoesNotExist
-
+from django.http import HttpResponseRedirect
 
 class AvtoDellConfirm(LoginRequiredMixin, View):
     @staticmethod
@@ -56,7 +56,7 @@ class AddAvto(LoginRequiredMixin, View):
                                 discript_avto = discript_avto,
                                 author = request.user)
         context = my_count()
-        return render(request, "avto/form_add.html", context)
+        return HttpResponseRedirect('/avto/view/')
 
 
 class AvtoView(LoginRequiredMixin, View):
