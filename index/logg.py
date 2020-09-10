@@ -18,9 +18,9 @@ def log_decorator(text_message):
                 content += kwargs['nomber']
             except:
                 pass
-            user_ip = args[0].META.get('HTTP_X_Real_IP')
-            if user_ip is None:
-                user_ip = args[0].META.get('REMOTE_ADDR')
+            user_ip = str(args[0].META.get('HTTP_X_Real_IP')) + ' HTTP_X_Real_IP'
+            if user_ip == 'None HTTP_X_Real_IP':
+                user_ip = str(args[0].META.get('REMOTE_ADDR')) + ' REMOTE_ADDR'
             content += ' ip:' + user_ip
 
             log = MyLogg.objects.create(text = text_message, context = content, user = args[0].user)
