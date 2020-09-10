@@ -45,6 +45,7 @@ class AddAvto(LoginRequiredMixin, View):
     @log_decorator('Добавление авто')
     def post(request):
         nomer_avto = request.POST.get("nomer_avto").strip()
+        nomer_avto = nomer_avto.replace(' ', '')
         discript_avto = request.POST.get("discript_avto")
         try:
             avto = Avto.objects.get(nomer_avto=nomer_avto)
