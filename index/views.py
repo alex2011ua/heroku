@@ -16,6 +16,7 @@ class Start(TemplateView):
         data['counter'] = counter()
         return data
 
+
 class Export(LoginRequiredMixin, TemplateView):
     @staticmethod
     @log_decorator('export')

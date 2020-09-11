@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} Message {% endblock %}
+{% block content %}
+    <section class="services-section" id="section-1">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 col-services">
+              <h4> {{ text_error }}
+              </h4>
+
+              <a class="btn btn-primary" href="{{ url }}" role="button">Return</a>
+
+          </div> <!-- /.col-md-12 -->
+        </div> <!-- /.row -->
+      </div> <!-- /.container -->
+    </section> <!-- /.services-section -->
+{% endblock %}
+
+{% block my_counter %}
+{% endblock %}
+{% block head %}
+
+    {% endblock head %}

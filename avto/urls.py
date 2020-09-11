@@ -9,7 +9,7 @@ urlpatterns = [
     re_path(r'view/dell/(?P<nomber>\w+)/dell$', views.AvtoDellConfirm.as_view(),
             name='dell_confirm'),
 
-    path('import/', baza.Import.as_view(), name='import'),
-    path('export/', baza.Export.as_view(), name='export'),
+    path('import/', baza.Import.as_view(), name='import_BD'),
+    path('export/', baza.Export.as_view(), name='export_BD'),
 
 ]
