@@ -8,7 +8,12 @@ from django.core.exceptions import MultipleObjectsReturned, ObjectDoesNotExist
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 import re
+from django import forms
 from django.http import Http404, HttpResponseNotModified
+
+
+class FormAdd(forms.Form):
+
 
 
 class AvtoDellConfirm(LoginRequiredMixin, View):
