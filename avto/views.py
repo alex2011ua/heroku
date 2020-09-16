@@ -13,7 +13,7 @@ from django.http import Http404, HttpResponseNotModified
 
 
 class FormAdd(forms.Form):
-
+    pass
 
 
 class AvtoDellConfirm(LoginRequiredMixin, View):
