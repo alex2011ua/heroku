@@ -42,7 +42,9 @@ INSTALLED_APPS = [
 
     'avto.apps.AvtoConfig',
     'accounts.apps.AccountsConfig',
-    'index.apps.IndexConfig'
+    'index.apps.IndexConfig',
+    'weather.apps.WeatherConfig'
+
 
 ]
 
@@ -148,7 +150,7 @@ USE_TZ = False
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-LOGIN_REDIRECT_URL = '/avto/view'
+LOGIN_REDIRECT_URL = '/'
 
 STATIC_URL = '/statics/'
 LOGIN_URL = '/accounts/login/'
