@@ -3,7 +3,6 @@ https://openweathermap.org/
 '''
 
 import requests
-import json
 import datetime
 from heroku.settings import APPID_Weather
 def weather_rain_summ(lat=50.40, lon= 30.31):
@@ -27,10 +26,11 @@ def weather_rain_summ(lat=50.40, lon= 30.31):
     value = datetime.datetime.fromtimestamp(timestamp)
     value = value - datetime.timedelta(hours = 2)
     print(value.strftime('%Y-%m-%d %H:%M:%S'))
+    if summ == 0:
+        summ = 'Дождя не будет'
     context = {'rain': summ, 'date': value.strftime('%Y-%m-%d %H:%M:%S')}
     return context
 
 
 if __name__ == "__main__":
     print(weather_rain_summ())
-    pass
