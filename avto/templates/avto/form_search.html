@@ -1,18 +1,20 @@
 {% extends "base.html" %}
 {% block title %} Avto {% endblock %}
 {% block content %}
-<nav class="navbar navbar-dark bg-dark">
-      <form class="form-inline my-2 my-lg-0" method="post" action="">
+
+<nav class="navbar navbar-dark bg-dark ">
+      <form class="form-inline my-5 my-lg-0" method="post" action="">
           {% csrf_token %}
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search">
+        <input class="form-control mr-sm-3" type="search" placeholder="Search" aria-label="Search" name="search">
         <button class="btn btn-outline-success" type="submit">Поиск автомобиля</button>
 
 
 
     </form>
-<a class="btn btn-primary" href="/avto/add/" role="button">Добавить машину</a>
+<a class="btn btn-primary mr-5" href="/avto/add/" role="button">Добавить машину</a>
 
 </nav>
+
 {% endblock %}
 
 {% block avto %}

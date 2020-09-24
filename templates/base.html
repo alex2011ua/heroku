@@ -14,8 +14,9 @@
     {% block styles%} {% endblock%}
 
 </head>
-<body class="flex-column"  >
 
+<body class="flex-column"  >
+<div  class="container-fluid ">
 
 {% block user %}
 <div class="alert alert-dark" role="alert">
@@ -36,6 +37,8 @@
     </section> <!-- /.services-section -->
 {% endblock %}
 
+
+
 {% block content %}
 {% endblock %}
 
@@ -52,16 +55,20 @@
 {% block my_counter %}
 
 
-
-<footer class="footer mt-auto py-3">
-    <span class="text-muted">Счетчик показа страницы: </span>
-      <span class="badge badge-secondary">{{ counter }}</span>
+<div class="alert alert-dark" role="alert">
+<footer class=" mt-auto py-1">
+    <span class="text-muted ">Счетчик показа страницы: </span>
+      <span class="badge badge-secondary ">{{ counter }}</span>
   </footer>
+</div>
 {% endblock %}
+
 <script type="text/javascript" src="{% static "jquery/jquery-3.5.1.min.js"%}"></script>
 <script type="text/javascript" src="{% static "bootstrap/js/bootstrap.min.js" %}"></script>
 {%block scripts %} {% endblock%}
+</div>
 </body>
+
 </html>
 
 
