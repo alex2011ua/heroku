@@ -28,7 +28,7 @@ def weather_rain_summ(lat=50.40, lon= 30.31):
     print(value.strftime('%Y-%m-%d %H:%M:%S'))
     if summ == 0:
         summ = 'Дождя не будет'
-    context = {'rain': summ, 'date': value.strftime('%Y-%m-%d %H:%M:%S')}
+    context = {'rain': round(summ), 'date': value.strftime('%Y-%m-%d %H:%M:%S')}
     return context
 
 
