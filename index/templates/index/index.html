@@ -6,7 +6,7 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12 col-services">
-              <h4>{% if user.is_authenticated %}Приветствую {{ user.username }}.
+              <h4 class="asda">{% if user.is_authenticated %}Приветствую {{ user.username }}.
               {% else %} Для работы необходимо зарегистрироваться!{% endif %}
               </h4>
     {% if user.is_authenticated %}
