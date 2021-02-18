@@ -44,8 +44,6 @@ INSTALLED_APPS = [
     'accounts.apps.AccountsConfig',
     'index.apps.IndexConfig',
 
-    # Django apps
-    'bootstrap_themes',
 
 ]
 
