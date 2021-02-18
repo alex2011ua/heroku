@@ -43,8 +43,9 @@ INSTALLED_APPS = [
     'avto.apps.AvtoConfig',
     'accounts.apps.AccountsConfig',
     'index.apps.IndexConfig',
-    'weather.apps.WeatherConfig'
 
+    # Django apps
+    'bootstrap_themes',
 
 ]
 

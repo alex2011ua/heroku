@@ -1,43 +1,279 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block title %} Index {% endblock %}
-{% block content %}
-    <section class="services-section" id="section-1">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 col-services">
-              <h4 class="asda">{% if user.is_authenticated %}Приветствую {{ user.username }}.
-              {% else %} Для работы необходимо зарегистрироваться!{% endif %}
-              </h4>
-    {% if user.is_authenticated %}
 
-    <a class="btn btn-primary" href="/avto/view/" role="button">Поиск автомобиля</a>
-        <a class="btn btn-primary" href="/avto/add/" role="button">Добавить машину</a>
-        <p> <a class="btn btn-secondary " href="/avto/export/" role="button">'Экспорт БД'</a>
-        <a class="btn btn-secondary " href="/avto/import/" role="button">'Импорт БД'</a></p>
-        <p><a class="btn btn-secondary " href="/index/export/" role="button">'Export loggs'</a></p>
-
-        {% else %}
-        <a class="btn btn-info" href="/accounts/login/" role="button">Вход!</a>
-            {% endif %}
-          </div> <!-- /.col-md-12 -->
-        </div> <!-- /.row -->
-
-        <div class="row">
-          <div class="col-md-12 col-services">
-              {% if user.is_authenticated %}
-              <a class="btn btn-info" href="/accounts/logout/" role="button">Сменить пользователя</a>
-              <a class="btn btn-info" href="/accounts/password-change/" role="button">Сменить пароль</a>
-              {% endif %}
-          </div> <!-- /.col-md-12 -->
-        </div> <!-- /.row -->
-      </div> <!-- /.container -->
-    </section> <!-- /.services-section -->
-    <h5 class="ml-5 pl-5"> Test: <a href="/weather/" class=" m-2 badge badge-primary">Wether</a></h5>
+{% block slider %}
+    <!--== Start Slider Area Wrapper ==-->
+    <div class="slider-area-wrapper">
+        <div class="slider-content-active">
+            <div class="slider-slide-item bg-img" data-bg={% static "assets/img/slider/slider-1.jpg" %}>
+                <div class="container container-wide h-100">
+                    <div class="row align-items-center h-100">
+                        <div class="col-lg-6">
+                            <div class="slide-content">
+                                <div class="slide-content-inner">
+                                    <h3>Авто из америки</h3>
+                                    <h2>WHEELS &amp; TIRES COLLECTIONS</h2>
+                                    <a class="btn btn-white" href="/shop">Shop Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-slide-item bg-img" data-bg={% static "assets/img/slider/slider-2.jpg" %}>
+                <div class="container container-wide h-100">
+                    <div class="row align-items-center h-100">
+                        <div class="col-12">
+                            <div class="slide-content">
+                                <div class="slide-content-inner">
+                                    <h3>Продажа запчастей</h3>
+                                    <h2>WHEELS &amp; TIRES <br> COLLECTIONS</h2>
+                                        <a class="btn btn-white" href="shop.html">Shop Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--== End Slider Area Wrapper ==-->
 {% endblock %}
 
+{% block call %}
+    <!--== Start Call to Action Area ==-->
+    <div class="call-to-action-area sm-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-lg-4">
+                    <div class="call-to-action-item mt-0">
+                        <div class="call-to-action-item__icon">
+                            <img src={% static "assets/img/icons/icon-1.png" %} alt="fast delivery">
+                        </div>
+                        <div class="call-to-action-item__info">
+                            <h3>Free Home Delivery</h3>
+                            <p>Provide free home delivery
+                                for all product over $100</p>
+                        </div>
+                    </div>
+                </div>
 
+                <div class="col-md-4 col-lg-4">
+                    <div class="call-to-action-item">
+                        <div class="call-to-action-item__icon">
+                            <img src={% static "assets/img/icons/icon-2.png" %} alt="quality">
+                        </div>
+                        <div class="call-to-action-item__info">
+                            <h3>Quality Products</h3>
+                            <p>We ensure our product
+                                quality all times</p>
+                        </div>
+                    </div>
+                </div>
 
-{% block head %}
+                <div class="col-md-4 col-lg-4">
+                    <div class="call-to-action-item">
+                        <div class="call-to-action-item__icon">
+                            <img src={% static "assets/img/icons/icon-3.png" %} alt="return">
+                        </div>
+                        <div class="call-to-action-item__info">
+                            <h3>Online Support</h3>
+                            <p>To satisfy our customer we try
+                                to give support online</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--== End Call to Action Area ==-->
+{% endblock %}
 
-    {% endblock head %}
+{% block bestseller %}
+    <!--== Start Best Seller Products Area ==-->
+    <div class="best-seller-products-area sm-top">
+        <div class="container container-wide">
+            <div class="row">
+                <div class="col-lg-5 m-auto text-center">
+                    <div class="section-title">
+                        <h2 class="h3">Best Seller</h2>
+                        <p>All best seller product are now available for you and your can buy
+                            this product from here any time any where so sop now</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="product-wrapper">
+                        <div class="product-carousel">
+                            <!-- Start Product Item -->
+                            <div class="product-item">
+                                <div class="product-item__thumb">
+                                    <a href="single-product.html">
+                                        <img class="thumb-primary" src="assets/img/product/product-1.png" alt="Product" />
+                                        <img class="thumb-secondary" src="assets/img/product/product-2.png" alt="Product" />
+                                    </a>
+                                </div>
+
+                                <div class="product-item__content">
+                                    <div class="ratting">
+                                        <span><i class="ion-android-star"></i></span>
+                                        <span><i class="ion-android-star"></i></span>
+                                        <span><i class="ion-android-star"></i></span>
+                                        <span><i class="ion-android-star"></i></span>
+                                        <span><i class="ion-android-star-half"></i></span>
+                                    </div>
+                                    <h4 class="title"><a href="single-product.html">Auto Clutch & Brake</a></h4>
+                                    <span class="price"><strong>Price:</strong> $165.00</span>
+                                </div>
+
+                                <div class="product-item__action">
+                                    <button class="btn-add-to-cart"><i class="ion-bag"></i></button>
+                                    <button class="btn-add-to-cart"><i class="ion-ios-loop-strong"></i></button>
+                                    <button class="btn-add-to-cart"><i class="ion-ios-heart-outline"></i></button>
+                                    <button class="btn-add-to-cart"><i class="ion-eye"></i></button>
+                                </div>
+
+                                <div class="product-item__sale">
+                                    <span class="sale-txt">25%</span>
+                                </div>
+                            </div>
+                            <!-- End Product Item -->
+
+                            <!-- Start Product Item -->
+                            <div class="product-item">
+                                <div class="product-item__thumb">
+                                    <a href="single-product.html">
+                                        <img class="thumb-primary" src="assets/img/product/product-3.png" alt="Product" />
+                                        <img class="thumb-secondary" src="assets/img/product/product-4.png" alt="Product" />
+                                    </a>
+                                </div>
+
+                                <div class="product-item__content">
+                                    <div class="ratting">
+                                        <span><i class="ion-android-star"></i></span>
+                                        <span><i class="ion-android-star"></i></span>
+                                        <span><i class="ion-android-star"></i></span>
+                                        <span><i class="ion-android-star-half"></i></span>
+                                        <span><i class="ion-android-star-half"></i></span>
+                                    </div>
+                                    <h4 class="title"><a href="single-product.html">Leather Steering Wheel</a></h4>
+                                    <span class="price"><strong>Price:</strong> $615.00</span>
+                                </div>
+
+                                <div class="product-item__action">
+                                    <button class="btn-add-to-cart"><i class="ion-bag"></i></button>
+                                    <button class="btn-add-to-cart"><i class="ion-ios-loop-strong"></i></button>
+                                    <button class="btn-add-to-cart"><i class="ion-ios-heart-outline"></i></button>
+                                    <button class="btn-add-to-cart"><i class="ion-eye"></i></button>
+                                </div>
+                            </div>
+                            <!-- End Product Item -->
+
+                            <!-- Start Product Item -->
+                            <div class="product-item">
+                                <div class="product-item__thumb">
+                                    <a href="single-product.html">
+                                        <img class="thumb-primary" src="assets/img/product/product-4.png" alt="Product" />
+                                        <img class="thumb-secondary" src="assets/img/product/product-5.png" alt="Product" />
+                                    </a>
+                                </div>
+
+                                <div class="product-item__content">
+                                    <div class="ratting">
+                                        <span><i class="ion-android-star"></i></span>
+                                        <span><i class="ion-android-star"></i></span>
+                                        <span><i class="ion-android-star"></i></span>
+                                        <span><i class="ion-android-star"></i></span>
+                                        <span><i class="ion-android-star"></i></span>
+                                    </div>
+                                    <h4 class="title"><a href="single-product.html">Hanging 4K Camera</a></h4>
+                                    <span class="price"><strong>Price:</strong> $65.00</span>
+                                </div>
+
+                                <div class="product-item__action">
+                                    <button class="btn-add-to-cart"><i class="ion-bag"></i></button>
+                                    <button class="btn-add-to-cart"><i class="ion-ios-loop-strong"></i></button>
+                                    <button class="btn-add-to-cart"><i class="ion-ios-heart-outline"></i></button>
+                                    <button class="btn-add-to-cart"><i class="ion-eye"></i></button>
+                                </div>
+
+                                <div class="product-item__sale">
+                                    <span class="sale-txt">35%</span>
+                                </div>
+                            </div>
+                            <!-- End Product Item -->
+
+                            <!-- Start Product Item -->
+                            <div class="product-item">
+                                <div class="product-item__thumb">
+                                    <a href="single-product.html">
+                                        <img class="thumb-primary" src="assets/img/product/product-2.png" alt="Product" />
+                                        <img class="thumb-secondary" src="assets/img/product/product-1.png" alt="Product" />
+                                    </a>
+                                </div>
+
+                                <div class="product-item__content">
+                                    <div class="ratting">
+                                        <span><i class="ion-android-star"></i></span>
+                                        <span><i class="ion-android-star"></i></span>
+                                        <span><i class="ion-android-star"></i></span>
+                                        <span><i class="ion-android-star"></i></span>
+                                        <span><i class="ion-android-star-half"></i></span>
+                                    </div>
+                                    <h4 class="title"><a href="single-product.html">17 inch Rims 8 Lug</a></h4>
+                                    <span class="price"><strong>Price:</strong> $165.00</span>
+                                </div>
+
+                                <div class="product-item__action">
+                                    <button class="btn-add-to-cart"><i class="ion-bag"></i></button>
+                                    <button class="btn-add-to-cart"><i class="ion-ios-loop-strong"></i></button>
+                                    <button class="btn-add-to-cart"><i class="ion-ios-heart-outline"></i></button>
+                                    <button class="btn-add-to-cart"><i class="ion-eye"></i></button>
+                                </div>
+                            </div>
+                            <!-- End Product Item -->
+
+                            <!-- Start Product Item -->
+                            <div class="product-item">
+                                <div class="product-item__thumb">
+                                    <a href="single-product.html">
+                                        <img class="thumb-primary" src="assets/img/product/product-5.png" alt="Product" />
+                                        <img class="thumb-secondary" src="assets/img/product/product-4.png" alt="Product" />
+                                    </a>
+                                </div>
+
+                                <div class="product-item__content">
+                                    <div class="ratting">
+                                        <span><i class="ion-android-star"></i></span>
+                                        <span><i class="ion-android-star"></i></span>
+                                        <span><i class="ion-android-star"></i></span>
+                                        <span><i class="ion-android-star"></i></span>
+                                        <span><i class="ion-android-star-half"></i></span>
+                                    </div>
+                                    <h4 class="title"><a href="single-product.html">Locking Hub Diagram</a></h4>
+                                    <span class="price"><strong>Price:</strong> $165.00</span>
+                                </div>
+
+                                <div class="product-item__action">
+                                    <button class="btn-add-to-cart"><i class="ion-bag"></i></button>
+                                    <button class="btn-add-to-cart"><i class="ion-ios-loop-strong"></i></button>
+                                    <button class="btn-add-to-cart"><i class="ion-ios-heart-outline"></i></button>
+                                    <button class="btn-add-to-cart"><i class="ion-eye"></i></button>
+                                </div>
+
+                                <div class="product-item__sale">
+                                    <span class="sale-txt">21%</span>
+                                </div>
+                            </div>
+                            <!-- End Product Item -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--== End Best Seller Products Area ==-->
+{% endblock %}
